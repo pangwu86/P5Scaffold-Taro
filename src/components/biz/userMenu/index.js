@@ -15,7 +15,7 @@ export default class Index extends Component {
   componentDidHide() {}
 
   render() {
-    let { menu, onClick } = this.props;
+    let { menuList, onClick } = this.props;
     // let {  } = this.state;
     return (
       <View className="vm-component">
@@ -37,7 +37,7 @@ export default class Index extends Component {
           </AtList>
         </View> */}
         <View className="vm-user-menu">
-          {menu.map((m, idx) => (
+          {menuList.map((m, idx) => (
             <Block key={new Date().getTime() + idx}>
               {/* 分割 */}
               {(m.title == undefined || m.type == "divider") && (
@@ -89,7 +89,7 @@ export default class Index extends Component {
 }
 
 Index.defaultProps = {
-  menu: [
+  menuList: [
     {
       title: "标题文字",
       arrow: "right"
@@ -111,6 +111,6 @@ Index.defaultProps = {
 };
 
 Index.propTypes = {
-  menu: PropTypes.array,
+  menuList: PropTypes.array,
   onClick: PropTypes.func
 };

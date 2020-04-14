@@ -21,10 +21,24 @@ const postData = (url, data) => {
 const api = {
   log,
   wxappLogin(data) {
-    return postData("/user/wxmaLogin.htm", data);
-  },
-  wxappBind(data) {
-    return postData("/user/wxmaBind.htm", data);
+    let loginInfo = Object.assign(
+      {
+        userId: "u1",
+        token: "t1",
+        tokenExpire: new Date().getTime() + 1000 * 60 * 60 * 24,
+      },
+      data.userInfo
+    );
+    return new Promise((resolve) => {
+      setTimeout(
+        () =>
+          resolve({
+            ok: true,
+            data: loginInfo,
+          }),
+        1000
+      );
+    });
   },
 };
 

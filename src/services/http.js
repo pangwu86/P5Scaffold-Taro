@@ -36,12 +36,16 @@ class httpRequest {
   }
 
   postForm(url, data) {
-    let params = { url, data, "application/x-www-form-urlencoded;charset=UTF-8" };
+    let params = {
+      url,
+      data,
+      contentType: "application/x-www-form-urlencoded;charset=UTF-8",
+    };
     return this.baseOptions(params, "POST");
   }
 
   uploadFile(url, data) {
-    let params = { url, data, "multipart/form-data" };
+    let params = { url, data, contentType: "multipart/form-data" };
     return this.baseOptions(params, "POST");
   }
 

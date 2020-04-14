@@ -72,11 +72,7 @@ export default class CheckLogin extends Component {
       self.setState({
         showLoading: false,
       });
-      if (res.status == "USER_NEED_WXMABIND") {
-        GlobalData.gsetSync("session_info", res.data);
-        self.props.onChangeUser(false);
-        self.props.onChangePhone(true);
-      } else {
+      if (res.ok) {
         self.props.onChangeUser(false);
         self.setLoginInfo(res.data);
       }
@@ -91,7 +87,7 @@ export default class CheckLogin extends Component {
       loginInfo,
       loginInfo.userId,
       loginInfo.token,
-      loginInfo.failureTime * 1000
+      loginInfo.tokenExpire
     );
     this.props.onChangeLogin(true);
   }

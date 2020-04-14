@@ -2,7 +2,7 @@
   "miniprogramRoot": "./dist",
   "projectname": "taro-boilerplate",
   "description": "taro模板项目",
-  "appid": "请填入测试号或真实AppID",
+  "appid": "wx5e11715d536f45b9",
   "setting": {
     "urlCheck": false,
     "es6": false,

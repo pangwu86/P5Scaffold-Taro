@@ -24,7 +24,7 @@ class App extends Component {
   componentDidCatchError() {}
 
   config = {
-    pages: ["pages/index/index", "pages/my/index"],
+    pages: ["pages/index/index", "pages/my/index", "pages/myInfo/index"],
     tabBar: {
       color: "#aaaaaa",
       selectedColor: "#ff9d1c",

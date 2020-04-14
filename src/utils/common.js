@@ -72,6 +72,9 @@ export function extractArray(arr, key) {
 }
 
 export function mosaicText(text, start, end, replace) {
+  if (!text) {
+    return;
+  }
   replace = replace || "*";
   let size = text.length;
   if (start < size) {

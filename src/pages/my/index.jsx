@@ -3,9 +3,6 @@ import { View } from "@tarojs/components";
 import { AtMessage } from "taro-ui";
 import { CheckLogin, UserBanner, UserBalance, UserMenu } from "@components/biz";
 import GlobalUser from "@utils/globalUser";
-import menuOrder from "@images/menu_order.png";
-import menuContact from "@images/menu_contact.png";
-import menuGamers from "@images/menu_gamers.png";
 import "./index.scss";
 
 export default class Index extends Component {
@@ -15,34 +12,36 @@ export default class Index extends Component {
       loginOk: false,
       authUser: false,
       authPhone: false,
-      menu: [
+      menuList: [
         {},
         {
-          title: "订单管理",
-          arrow: "right",
-          thumb: menuOrder,
-          url: "/pages/orderList/index"
+          title: "消息设置",
+          arrow: "right"
+        },
+        {
+          title: "帮助中心",
+          arrow: "right"
         },
         {},
-        // {
-        //   title: "帮助反馈",
-        //   arrow: "right",
-        //   thumb: menuHelp,
-        //   border: true
-        // },
         {
-          title: "联系客服",
+          title: "联系德纳",
           arrow: "right",
-          thumb: menuContact,
           type: "button",
           openType: "contact"
-        },
-        {},
+        }
+      ],
+      balanceList: [
         {
-          title: "游戏角色",
-          arrow: "right",
-          thumb: menuGamers,
-          url: "/pages/myConsignee/index"
+          name: "余额(元)",
+          value: "0.00"
+        },
+        {
+          name: "待续费(元)",
+          value: "0.00"
+        },
+        {
+          name: "代金券(元)",
+          value: "0.00"
         }
       ]
     };
@@ -103,15 +102,8 @@ export default class Index extends Component {
     });
   }
 
-  onShareAppMessage() {
-    return {
-      title: "一个买DNF金币的好地方",
-      path: "/pages/launch/index?userId=" + GlobalUser.getUserId()
-    };
-  }
-
   render() {
-    let { authUser, authPhone, menu, userInfo } = this.state;
+    let { authUser, authPhone, userInfo, menuList, balanceList } = this.state;
     return (
       <View className="vm-page bg-whitesmoke">
         <AtMessage></AtMessage>
@@ -126,15 +118,19 @@ export default class Index extends Component {
         {/* 用户信息 */}
         <UserBanner
           avatar={userInfo.avatarUrl}
-          name={userInfo.nickname ? userInfo.nickname : "未登陆用户"}
+          name={userInfo.nickName ? userInfo.nickName : "未登陆用户"}
           remark={userInfo.userId ? "ID：" + userInfo.userId : "请点击授权登陆"}
           onAvatarClick={this.onUserClick.bind(this)}
           onInfoClick={this.onUserClick.bind(this)}
           onEditClick={this.onUserClick.bind(this)}
         ></UserBanner>
-        <UserBalance></UserBalance>
+        {/* 余额信息 */}
+        <UserBalance balanceList={balanceList}></UserBalance>
         {/* 用户菜单 */}
-        <UserMenu menu={menu} onClick={this.onMenuClick.bind(this)}></UserMenu>
+        <UserMenu
+          menuList={menuList}
+          onClick={this.onMenuClick.bind(this)}
+        ></UserMenu>
       </View>
     );
   }

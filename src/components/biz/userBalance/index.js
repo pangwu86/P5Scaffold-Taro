@@ -40,17 +40,21 @@ export default class Index extends Component {
 Index.defaultProps = {
   balanceList: [
     {
-      name: "可用金额(元)",
-      value: 0,
+      name: "余额(元)",
+      value: "0.00"
     },
     {
-      name: "冻结金额(元)",
-      value: 0,
+      name: "待续费(元)",
+      value: "0.00"
     },
+    {
+      name: "代金券(元)",
+      value: "0.00"
+    }
   ],
-  onTabClick: () => {},
+  onTabClick: () => {}
 };
 Index.propTypes = {
   balanceList: PropTypes.array,
-  onTabClick: PropTypes.func,
+  onTabClick: PropTypes.func
 };

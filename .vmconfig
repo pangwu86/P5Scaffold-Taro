@@ -1,0 +1,17 @@
+# 默认key
+
+```
+wx_user         : 来自微信接口getUserInfo
+wx_sys          : 来自微信接口wxSystemInfo
+
+token           : 后台的token  
+token_expire    : 后台的token过期时间
+user_info       : 登陆用户信息
+user_id         ：登陆用户id
+```
+
+# 业务key
+
+```
+
+```

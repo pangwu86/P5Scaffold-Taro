@@ -1,0 +1,36 @@
+@import "@css/custom-theme.scss";
+@import "~taro-ui/dist/style/components/flex.scss";
+
+.vm-user-balance {
+  background-color: #fff;
+  border-top: 1px solid rgba(232, 232, 232, 1);
+  border-bottom: 1px solid rgba(232, 232, 232, 1);
+  .at-col {
+    padding: 32px 0;
+  }
+
+  &__tab {
+    text-align: center;
+    border-right: 1px solid rgba(216, 216, 216, 1);
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &::last-child {
+      border-right: none;
+    }
+
+    .name {
+      color: #666666;
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    .value {
+      color: #505050;
+      font-size: 40px;
+    }
+  }
+}

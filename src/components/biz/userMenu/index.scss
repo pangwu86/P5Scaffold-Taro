@@ -1,0 +1,73 @@
+@import "@css/custom-theme.scss";
+@import "~taro-ui/dist/style/components/flex.scss";
+
+.vm-user-menu {
+  &__list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px 24px;
+    position: relative;
+
+    // &::after {
+    //   content: "";
+    //   position: absolute;
+    //   right: 0;
+    //   bottom: 0;
+    //   width: 85%;
+    //   height: 2px;
+    //   background-color: #eee;
+    //   &:last-child {
+    //     width: 0;
+    //     height: 0;
+    //   }
+    // }
+
+    &.has-border {
+      &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 85%;
+        height: 2px;
+        background-color: #eee;
+      }
+    }
+
+    .left {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .thumb {
+        .img {
+          display: block;
+          width: 64px;
+          height: 64px;
+        }
+      }
+      .title {
+        margin-left: 24px;
+      }
+    }
+
+    .right {
+    }
+  }
+
+  // 分割条
+  .vm-divider {
+    height: 20px;
+    background: rgba(245, 245, 245, 1);
+  }
+}
+
+.vm-hide-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+}

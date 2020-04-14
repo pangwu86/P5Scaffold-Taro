@@ -1,0 +1,54 @@
+@import "@css/custom-theme.scss";
+@import "~taro-ui/dist/style/components/flex.scss";
+
+.vm-login {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+
+  .vm-login-inner {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .vm-modal {
+    width: 82%;
+    min-height: 20%;
+    background: #fff;
+    border-radius: 20px;
+    padding: 36px 60px;
+
+    .auth-title {
+      text-align: center;
+      font-size: 40px;
+      font-weight: bold;
+      margin-bottom: 80px;
+    }
+
+    .auth-pic {
+      display: block;
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+    }
+
+    .auth-content {
+      color: #505050;
+      text-align: center;
+      margin-top: 80px;
+      font-size: 28px;
+    }
+
+    .auth-btn {
+      margin-top: 50px;
+    }
+  }
+}
